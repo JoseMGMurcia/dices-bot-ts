@@ -3,3 +3,6 @@
 
 # lock files
 package-lock.json
+
+# token
+shared/token.constant.ts
