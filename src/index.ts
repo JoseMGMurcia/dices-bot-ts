@@ -1,52 +1,29 @@
 import { Client, GatewayIntentBits, Message } from "discord.js";
+import { DICE_SEPARATOR } from "./shared/constants/message.constant";
+import { NUMBERS } from "./shared/constants/number.constants";
+import { rollRegex } from "./shared/constants/regex.constants";
 import { TOKEN } from "./shared/constants/token.constant";
+import { getTotal } from "./shared/utils/dices.utils";
 import { cutDicesRolls, replaceAuthorName } from "./shared/utils/message.utils";
-
+import { logAndReply } from "./shared/utils/post.utils";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-
 
 client.on('ready', () => { console.log(`Logged in as ${client?.user?.tag}!`);});
 
 client.on("messageCreate", (msg: Message) => {
-    if (msg.author.bot) return
-    try {
-        const regex = /^([dD]|[0-9]|[+]|[-]|[ ])+$/;  //Text only contains [D, +, - , numbers, spaces]
-        if (regex.test(msg.content)) {
-          const rolls = cutDicesRolls(msg.content);
-          let total = 0;
-          rolls.forEach(roll => {
-            const upRoll = roll.toUpperCase();
-            if(upRoll.indexOf("D") === -1) {
-              total += parseInt(roll);
-            } else {
-              const dice = upRoll.split("D");
-              let negative = false;
-              let diceNumber = dice[0].length === 0 ? 1 : parseInt(dice[0]);
-              const diceType = parseInt(dice[1]);
-              if(diceNumber < 0 ){
-                negative = true;
-                diceNumber = diceNumber * -1;
-              }
-              for (let i = 0; i < diceNumber; i++) {
-                if (negative) total -= Math.floor(Math.random() * diceType) + 1;
-                else total += Math.floor(Math.random() * diceType) + 1;
-              }
-          }
-        });
-        const author= replaceAuthorName(msg.author.username);
-        const text = `${author} sacas: ${total}`
-        logAndReply(text, msg);
-       }
-    } catch(e: any) {
-      console.log(`Unspected eror ${e.message}`);
+  if (msg.author.bot) return
+  try {
+    if (rollRegex.test(msg.content)) {
+      const rolls: string[] = cutDicesRolls(msg.content);
+      const total: number = getTotal(rolls);
+      const author: string = replaceAuthorName(msg.author.username);
+      const text = `${author} sacas: ${total}`
+      logAndReply(text, msg);
     }
-  })
-  client.login(TOKEN);
-  
-  const logAndReply = (text: string, msg: any) => {
-    console.log(text);
-    msg.reply(text);
+  } catch(e: any) {
+    console.log(`Unspected eror ${e.message}`);
   }
-  
+});
+client.login(TOKEN);
   
