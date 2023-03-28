@@ -1,11 +1,14 @@
-import { Client, GatewayIntentBits } from "discord.js";
+import { Client, GatewayIntentBits, Message } from "discord.js";
+import { TOKEN } from "./shared/constants/token.constant";
+import { cutDicesRolls, replaceAuthorName } from "./shared/utils/message.utils";
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 
 client.on('ready', () => { console.log(`Logged in as ${client?.user?.tag}!`);});
 
-client.on("messageCreate", msg => {
+client.on("messageCreate", (msg: Message) => {
     if (msg.author.bot) return
     try {
         const regex = /^([dD]|[0-9]|[+]|[-]|[ ])+$/;  //Text only contains [D, +, - , numbers, spaces]
@@ -35,29 +38,15 @@ client.on("messageCreate", msg => {
         const text = `${author} sacas: ${total}`
         logAndReply(text, msg);
        }
-    } catch(e) {
+    } catch(e: any) {
       console.log(`Unspected eror ${e.message}`);
     }
   })
-  client.login(process.env.TOKEN);
+  client.login(TOKEN);
   
-  const logAndReply = (text, msg) => {
+  const logAndReply = (text: string, msg: any) => {
     console.log(text);
     msg.reply(text);
   }
   
-  const cutDicesRolls = (text) => {
-    text = text.replace("-", "+-");
-    const rolls = text.split("+");
-     rolls.forEach((roll, index) => {
-      rolls[index] = roll.trim();
-      // console.log(rolls[index]);
-    });
-     return rolls;
-  }
   
-  const replaceAuthorName = (text) => {
-    text = text.replace("Gwerfaur", "Pepe");
-    text = text.replace("Sithcario", "Ferrán");
-    return text;
-  }
