@@ -9,7 +9,7 @@ export const cutDicesRolls = (text: string) => {
     return rolls;
 }
   
-export const replaceAuthorName = (text: string) => {
+export const getReplacedAuthorName = (text: string) => {
   text = text.replace("Gwerfaur", "Pepe");
   text = text.replace("Sithcario", "Ferrán");
   return text;
