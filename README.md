@@ -19,8 +19,9 @@ Separate it by + or - characters (Spaces dont mind):
 d100+25
 12+d20
 
+## '?' or 'help' command shows you all other command supported.
 
-The server must be running with a correct token key.
+### The server must be running with a correct token key.
 
 before run:
 - npm install
