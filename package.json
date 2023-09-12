@@ -1,6 +1,6 @@
 {
   "name": "dices-bot-ts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Typescript discord bot",
   "main": "./src/index.ts",
   "scripts": {
