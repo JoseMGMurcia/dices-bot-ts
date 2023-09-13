@@ -10,7 +10,7 @@ export const getSuccessLevel = (target: number, result: number): SuccesLevelType
     return SuccesLevel.SPECIAL;
   } else if ( (result <= target && result <= NUMBERS.N_95) || (result < NUMBERS.N_6)) {
     return SuccesLevel.SUCCESS;
-  } else if ( result > target && result < getFumbleTarget(target)) {
+  } else if ( (result > target || result > NUMBERS.N_95) && result < getFumbleTarget(target)) {
     return SuccesLevel.FAILURE;
   } else {
     return SuccesLevel.FUMBLE;

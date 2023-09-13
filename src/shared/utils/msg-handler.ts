@@ -7,7 +7,6 @@ import { getFumbleText } from "./fumble.utils";
 import { AttackRoll, SuccesLevel, successLiterals } from "../models/get-set.model";
 import { getMaximunDamage, getSuccessLevel } from "./attack.utils";
 import { getAuthor } from "./message.utils";
-import { format } from "path";
 import { formatToOneSpace } from "./set-get-roll.utils";
 
 export const getRollText = (msg: Message): string => {
@@ -69,7 +68,6 @@ export const getModificator = (text: string): number => {
 export const getPercentagesRollMsg = (msg: Message): string => {
   const roll = msg.content.substring(NUMBERS.N_1).replaceAll(' ', '');
   const target = eval(roll);
-  console.log('target', target );
   const rolled = getTotal(['d100']);
   const succesLevel = getSuccessLevel(Number(target), rolled);
   return `${getAuthor(msg)} saca ${rolled} / ${target} - ${successLiterals[succesLevel]}`;
