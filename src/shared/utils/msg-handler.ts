@@ -31,6 +31,7 @@ export const getFunbleMsg = (msg: Message): string => {
 
 export const getAttackMsg = (msg: Message, attackRolls: AttackRoll[]): string => {
   const attackRoll = attackRolls.find((roll) => roll.owner === getAuthor(msg));
+  if (!attackRoll) { return `No hay un ataque guardado para ${getAuthor(msg)}`; }
   const rolled = getTotal(['d100']);
   const succesLevel = getSuccessLevel(attackRoll?.attack || NUMBERS.N_5, rolled);
   const damageMapper = {
