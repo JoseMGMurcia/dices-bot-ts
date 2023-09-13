@@ -10,7 +10,7 @@ export const isGetRollMsg = (text: string) => text.toLowerCase().startsWith(SET_
 export const isAttackRollMsg = (text: string) => text.toLowerCase().startsWith(SET_GET_CONSTANTS_ES.ROLL_TYPES.ATTACK);
 
 export const manageSetRoll = (text: string, author: string): SetResponse => {
-  const parts = formatSetGetText(text).split(' ');
+  const parts = formatToOneSpace(text).split(' ');
   console.log(parts);
   if (parts?.[NUMBERS.N_1].startsWith(SET_GET_CONSTANTS_ES.ROLL_TYPES.ATTACK)) {
     if ( parts.length < NUMBERS.N_5 ) {
@@ -34,4 +34,4 @@ export const manageSetRoll = (text: string, author: string): SetResponse => {
 
 export const isNotARollString = (text: string): boolean => cutDicesRolls(text).some((roll) => !isRollMsg(roll))
 
-export const formatSetGetText = (text: string): string => text.replace(/\s+/g, ' ').toLocaleLowerCase();
+export const formatToOneSpace = (text: string): string => text.replace(/\s+/g, ' ').toLocaleLowerCase();

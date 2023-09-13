@@ -16,3 +16,6 @@
  - Set Attack for latter use.
  - Get Saved Attack.
  - Do attack Roll, including damage and location.
+
+## V2.0.1 Runequest specialization
+ - Attack roll modificators.

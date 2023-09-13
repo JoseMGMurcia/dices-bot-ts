@@ -7,6 +7,8 @@ import { getFumbleText } from "./fumble.utils";
 import { AttackRoll, SuccesLevel, successLiterals } from "../models/get-set.model";
 import { getMaximunDamage, getSuccessLevel } from "./attack.utils";
 import { getAuthor } from "./message.utils";
+import { format } from "path";
+import { formatToOneSpace } from "./set-get-roll.utils";
 
 export const getRollText = (msg: Message): string => {
   const total: number = manageRolls(msg.content);
@@ -33,7 +35,8 @@ export const getAttackMsg = (msg: Message, attackRolls: AttackRoll[]): string =>
   const attackRoll = attackRolls.find((roll) => roll.owner === getAuthor(msg));
   if (!attackRoll) { return `No hay un ataque guardado para ${getAuthor(msg)}`; }
   const rolled = getTotal(['d100']);
-  const succesLevel = getSuccessLevel(attackRoll?.attack || NUMBERS.N_5, rolled);
+  const modificator = getModificator(msg.content);
+  const succesLevel = getSuccessLevel(attackRoll?.attack + modificator || NUMBERS.N_5, rolled);
   const damageMapper = {
     [SuccesLevel.CRITICAL]: getMaximunDamage(attackRoll?.specialDamage || ''),
     [SuccesLevel.SPECIAL]: attackRoll?.specialDamage,
@@ -45,7 +48,22 @@ export const getAttackMsg = (msg: Message, attackRolls: AttackRoll[]): string =>
   const damage = manageRolls(damageMapper[succesLevel] || '');
   const loc = getTotal(['d20']);
   const seccondPart = succesLevel === SuccesLevel.FUMBLE || succesLevel === SuccesLevel.FAILURE ? '': `\n ${damage + modifier} de daño en la loc ${loc}`
-  return  `${getAuthor(msg)}: (${rolled} / ${attackRoll?.attack}) - ${successLiterals[succesLevel]}${seccondPart}`;
+  return  `${getAuthor(msg)}: (${rolled} / ${attackRoll?.attack + modificator }) - ${successLiterals[succesLevel]}${seccondPart}`;
+};
+
+export const getModificator = (text: string): number => {
+  text =  formatToOneSpace(text);
+  const parts = text.split(' ');
+  if (parts[NUMBERS.N_1]) {
+    const mod = parts[NUMBERS.N_1];
+    return (mod.startsWith('+') || mod.startsWith('-')) && !isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
+
+  } else if (text.indexOf('+') > NUMBERS.N_0 || text.indexOf('-') > NUMBERS.N_0) {
+    const mod = text.substring(text.indexOf('+') > NUMBERS.N_0 ? text.indexOf('+') : text.indexOf('-'));
+    const nodNumber = mod.substring(NUMBERS.N_1);
+    return !isNaN(Number(nodNumber)) && !isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
+  }
+  return NUMBERS.N_0;
 };
 
 export const getPercentagesRollMsg = (msg: Message): string => {

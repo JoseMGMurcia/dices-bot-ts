@@ -27,5 +27,6 @@ export const helpText =
   set at habilidad daño daño especial modificador de daño
   ( ej: set at 50 1d8+1 2d8+2 1d4 ).
 - Tirar un ataque guardado: at.
+- Tirar un ataque guardado con modificador: ( ej: at +10).
 - Consultar un ataque guardado: get at.
 - Ayuda: help o ?`;
