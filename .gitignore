@@ -6,3 +6,6 @@ package-lock.json
 
 # token
 src/shared/constants/token.constant.ts
+
+# build files
+dist

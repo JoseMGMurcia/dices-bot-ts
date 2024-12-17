@@ -31,16 +31,16 @@ export const getMaximunDamage = (damage: string): string => {
   let total = NUMBERS.N_0;
   rolls.forEach(roll => {
     const upRoll = roll.toUpperCase();
-    if(upRoll.indexOf(DICE_SEPARATOR) === -NUMBERS.N_1) {
+    if( upRoll.indexOf(DICE_SEPARATOR) === -NUMBERS.N_1) {
       // Not a dice
       total += Number(roll);
-    }else {
+    } else {
       // Is a dice
       const dice = upRoll.split(DICE_SEPARATOR);
       
       let diceNumber = dice[NUMBERS.N_0].length === NUMBERS.N_0 ? NUMBERS.N_1 : Number(dice[NUMBERS.N_0]);
       const diceType = Number(dice[NUMBERS.N_1]);
-      const negative = diceNumber < NUMBERS.N_0 ? true: false;
+      const negative = diceNumber < NUMBERS.N_0;
       diceNumber = negative ? diceNumber * - NUMBERS.N_1 : diceNumber;
       if (negative) {
         total -= diceType * diceNumber;

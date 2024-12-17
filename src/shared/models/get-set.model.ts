@@ -1,24 +1,3 @@
-export interface SetResponse {
-  message: string;
-  success: boolean;
-  attacRoll?: AttackRoll;
-}
-
-export interface AttackRoll {
-  owner: string;
-  attack: number;
-  damage: string;
-  specialDamage?: string;
-  damageModifier?: string;
-};
-
-export interface RolledAttack {
-  owner: string;
-  target: number;
-  rolled: number;
-  damage: string;
-  location: string;
-};
 
 export interface result {
   rolled: number;

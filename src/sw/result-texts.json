@@ -1,0 +1,18 @@
+{
+  "success": {
+    "possitive": ["éxito", "éxitos"],
+    "neggative": ["fallo", "fallos"]
+  },
+  "advantage": {
+    "possitive": ["ventaja", "ventajas"],
+    "neggative": ["desventajas", "desventajas"]
+  },
+  "critical": {
+    "possitive": ["crítico", "críticos"],
+    "neggative": ["pifia", "pifias"]
+  },
+  "forcePoints": {
+    "possitive": ["punto del lado luminoso", "puntos del lado luminoso"],
+    "neggative": ["punto del lado oscuro", "puntos del lado oscuro"]
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "green": [
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "A",
+      "success": 0,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "R",
+      "success": 2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "S",
+      "success": 1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "B",
+      "success": 0,
+      "advantage": 2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "A",
+      "success": 0,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "Q",
+      "success": 1,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "S",
+      "success": 1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "purple": [
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "C",
+      "success": -1,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "E",
+      "success": -2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "U",
+      "success": 0,
+      "advantage": -2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "F",
+      "success": -1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "yellow": [
+    {
+      "symbol": "V",
+      "success": 0,
+      "advantage": 0,
+      "critical": 1,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "Q",
+      "success": 1,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "B",
+      "success": 0,
+      "advantage": 2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "S",
+      "success": 1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "R",
+      "success": 2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "A",
+      "success": 0,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "R",
+      "success": 2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "S",
+      "success": 1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "B",
+      "success": 0,
+      "advantage": 2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "Q",
+      "success": 1,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "Q",
+      "success": 1,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "red": [
+    {
+      "symbol": "D",
+      "success": 0,
+      "advantage": 0,
+      "critical": -1,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "C",
+      "success": -1,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "U",
+      "success": 0,
+      "advantage": -2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "F",
+      "success": -1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "E",
+      "success": -2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "F",
+      "success": -1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "U",
+      "success": 0,
+      "advantage": -2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "C",
+      "success": -1,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "E",
+      "success": -2,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "blue": [
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "Q",
+      "success": 1,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "B",
+      "success": 0,
+      "advantage": 2,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "S",
+      "success": 1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "A",
+      "success": 0,
+      "advantage": 1,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "black": [
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "T",
+      "success": 0,
+      "advantage": -1,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "F",
+      "success": -1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "F",
+      "success": -1,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ],
+  "white": [
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    },
+    {
+      "symbol": "K",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": -1
+    },
+    {
+      "symbol": "L",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": -2
+    },
+    {
+      "symbol": "W",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 1
+    },
+    {
+      "symbol": "X",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 2
+    },
+    {
+      "symbol": "W",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 1
+    },
+    {
+      "symbol": "K",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": -1
+    },
+    {
+      "symbol": "",
+      "success": 0,
+      "advantage": 0,
+      "critical": 0,
+      "forcePoints": 0
+    }
+  ]
+}
