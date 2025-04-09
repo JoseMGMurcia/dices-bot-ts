@@ -1,7 +1,7 @@
 {
   "green": [
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -59,7 +59,7 @@
   ],
   "purple": [
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -159,7 +159,7 @@
       "forcePoints": 0
     },
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -245,7 +245,7 @@
       "forcePoints": 0
     },
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -289,7 +289,7 @@
   ],
   "blue": [
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -303,7 +303,7 @@
       "forcePoints": 0
     },
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -333,7 +333,7 @@
   ],
   "black": [
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
@@ -347,7 +347,7 @@
       "forcePoints": 0
     },
     {
-      "symbol": "[ ]",
+      "symbol": "[  ]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
