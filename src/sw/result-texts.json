@@ -8,8 +8,8 @@
     "neggative": ["desventajas", "desventajas"]
   },
   "critical": {
-    "possitive": ["crítico", "críticos"],
-    "neggative": ["pifia", "pifias"]
+    "possitive": ["triunfo", "triunfos"],
+    "neggative": ["desesperación", "desesperaciones"]
   },
   "forcePoints": {
     "possitive": ["punto del lado luminoso", "puntos del lado luminoso"],
