@@ -4,8 +4,9 @@
 # lock files
 package-lock.json
 
-# token
-src/shared/constants/token.constant.ts
+# Environment variables
+.env
+.env.local
 
 # build files
 dist
