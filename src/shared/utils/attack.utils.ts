@@ -29,7 +29,7 @@ export const getFumbleTarget = (target: number): number => {
 export const getMaximunDamage = (damage: string): string => {
   const rolls = cutDicesRolls(damage);
   let total = NUMBERS.N_0;
-  rolls.forEach(roll => {
+  for (const roll of rolls) {
     const upRoll = roll.toUpperCase();
     if( upRoll.indexOf(DICE_SEPARATOR) === -NUMBERS.N_1) {
       // Not a dice
@@ -49,10 +49,6 @@ export const getMaximunDamage = (damage: string): string => {
         total += diceType * diceNumber;
       }
     }
-    
-  });
+  }
   return total.toString();
 };
-
-
-// set at 70 1d8 2d8+3

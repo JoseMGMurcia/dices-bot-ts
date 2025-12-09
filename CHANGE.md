@@ -1,5 +1,8 @@
 # Dices_bot
-## V3.0.0 SW Edge of Empira
+## V3.0.1 Small update
+ - SW Edge of empire , result shown on neutral rolls
+
+## V3.0.0 SW Edge of Empire
  - SW Edge of empira Dice rolls.
 
 ## V2.1.0 Runequest Glorantha

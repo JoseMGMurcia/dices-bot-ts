@@ -20,51 +20,53 @@ export const getResultexts = (): ResultText => {
 const dices = getDicesObject();
 const resultTexts = getResultexts();
 
-export const handleSWRolls = (msg: Message, client: Client) => {
+export const handleSWRolls = (msg: Message, client: Client): void => {
   const unindexedText = msg.content.slice(SW_INDEX.length);
   const rolls = unindexedText.split(SPACE_AND_PLUS_REGEX);
   const cleanRolls = rolls.filter((roll) => roll !== STRING_EMPTY && roll !== SPACE && roll !== PLUS_SYMBOL);
 
   if (cleanRolls.every(isValidSWRoll)) {
-    const results: SwDiceSide[] = []
-    cleanRolls.forEach((roll) => {
-      const color = getDiceColor(roll);
-      if (!color) { return; }
-      const number = getRollNumber(roll);
-      const dice = getDice(color);
-      for (let i = 0; i < number; i++) {
-        const rollResult = dice[Math.floor(Math.random() * dice.length)];
-        results.push(rollResult);
-      }   
-    });
-
-    const symbols = results.map((result) => result.symbol).join(STRING_EMPTY);
-    let success = 0;
-    let advantage = 0;
-    let critical = 0;
-    let forcePoints = 0;
-
-    results.forEach(result => {
-      success += result.success;
-      advantage += result.advantage;
-      critical += result.critical;
-      forcePoints += result.forcePoints;
-    });
-    let text = [];
-    if (success !== 0) text.push(getResultText(success, 'success'));
-    if (advantage !== 0) text.push(getResultText(advantage, 'advantage'));
-    if (critical !== 0) text.push(getResultText(critical, 'critical'));
-    if (forcePoints !== 0) text.push(getResultText(forcePoints, 'forcePoints'));
-
-    if (text.length === 0) return  post('No se han producido resultados', msg, client);
+    handleValidRolls(msg, client, cleanRolls);
+    return;
+  } 
   
-    post(`${getAuthor(msg)} tira: ${symbols}\n ${text.join(', ')}`, msg, client);
+  post(SW_HELP_TEXT, msg, client);
+};
 
-
-
-  } else { 
-    post(SW_HELP_TEXT, msg, client);
+export const handleValidRolls = (msg: Message, client: Client, cleanRolls: string[]): void => {
+  const results: SwDiceSide[] = []
+  for (const roll of cleanRolls) {
+    const color = getDiceColor(roll);
+    if (!color) { continue; }
+    const number = getRollNumber(roll);
+    const dice = getDice(color);
+    for (let i = 0; i < number; i++) {
+      const rollResult = dice[Math.floor(Math.random() * dice.length)];
+      results.push(rollResult);
+    }
   }
+
+  const symbols = results.map((result) => result.symbol).join(STRING_EMPTY);
+  let [success, advantage, critical, forcePoints] = [0, 0, 0, 0];
+
+  for (const result of results) {
+    success += result.success;
+    advantage += result.advantage;
+    critical += result.critical;
+    forcePoints += result.forcePoints;
+  }
+  let text = [];
+  if (success !== 0) text.push(getResultText(success, 'success'));
+  if (advantage !== 0) text.push(getResultText(advantage, 'advantage'));
+  if (critical !== 0) text.push(getResultText(critical, 'critical'));
+  if (forcePoints !== 0) text.push(getResultText(forcePoints, 'forcePoints'));
+  if (text.length === 0) text.push('No se han producido resultados');
+
+  post(`${getAuthor(msg)} tira: ${symbols}\n ${text.join(', ')}`, msg, client);
+};
+
+export const handleInvalidSWRoll = (msg: Message, client: Client): void => {
+  post(SW_HELP_TEXT, msg, client);
 };
 
 export const isValidSWRoll = (text: string): boolean => {
@@ -76,9 +78,9 @@ export const isValidSWRoll = (text: string): boolean => {
 
 export const getDiceColor = (text: string): SW_DICE_COLORS | undefined => {
   let colorToReturn: SW_DICE_COLORS | undefined = undefined;
-  Object.values(SW_DICE_COLORS).forEach((color) => {
+  for (const color of Object.values(SW_DICE_COLORS)) {
     if (text.includes(color)) { colorToReturn = color; }
-  });
+  }
   return colorToReturn;
 };
 
@@ -117,5 +119,4 @@ export const getResultText = (
   catch(e: any) {
     console.error(`Unspected error ${e}`);
   }
-  
 };

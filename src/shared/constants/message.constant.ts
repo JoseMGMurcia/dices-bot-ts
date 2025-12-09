@@ -5,13 +5,12 @@ export const YOU_ROLL_FOR_A_ES = 'sacas un:';
 
 export const SW_INDEX = 'sw ';
 
-export const helpText = 
+export const HELP_TEXT = 
   `Comandos disponibles:
 - Tirar dados: cualquier texto que contenga solo números , +, - y d ( ej: 1d20+5 ).
 - Tirar 1d100 y saber el tipo de exito: t habilidad ( ej: t50)( ej: t75+15-10 ).
 - Tirar pifias: poner pifia.
 - Ayuda: help o ?`;
-// TODO add SW help
 
 
 export const SW_HELP_TEXT =

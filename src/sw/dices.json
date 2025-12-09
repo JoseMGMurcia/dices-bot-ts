@@ -419,42 +419,42 @@
       "forcePoints": -1
     },
     {
-      "symbol": "☻☻",
+      "symbol": "[☻☻]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
       "forcePoints": -2
     },
     {
-      "symbol": "☺",
+      "symbol": "[☻]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
       "forcePoints": 1
     },
     {
-      "symbol": "☺",
+      "symbol": "[☻]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
       "forcePoints": 1
     },
     {
-      "symbol": "☺☺",
+      "symbol": "[☺☺]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
       "forcePoints": 2
     },
     {
-      "symbol": "☺☺",
+      "symbol": "[☺☺]",
       "success": 0,
       "advantage": 0,
       "critical": 0,
       "forcePoints": 2
     },
     {
-      "symbol": "☺☺",
+      "symbol": "[☺☺]",
       "success": 0,
       "advantage": 0,
       "critical": 0,

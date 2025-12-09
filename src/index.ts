@@ -4,7 +4,7 @@ import { isRollMsg, deleteMessagesFromSamePerson, isFumbleMsg, isPercentRollMsg,
 import { post } from "./shared/utils/post.utils";
 import { NUMBERS } from "./shared/constants/number.constants";
 import { getRollText, getFunbleMsg, getPercentagesRollMsg } from "./shared/utils/msg-handler";
-import { helpText } from "./shared/constants/message.constant";
+import { HELP_TEXT } from "./shared/constants/message.constant";
 import { isSWRollMsg } from "./shared/utils/set-get-roll.utils";
 import { handleSWRolls } from "./sw/sw.utils";
 
@@ -42,7 +42,7 @@ client.on("messageCreate", (msg: Message) => {
     }
 
     if (isHelpMsg(msg.content)) {
-      post(helpText, msg, client);
+      post(HELP_TEXT, msg, client);
       return;
     }
   }

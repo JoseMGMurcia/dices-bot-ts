@@ -1,5 +1,4 @@
-
-export interface result {
+export interface Result {
   rolled: number;
   target: number;
 }
@@ -13,7 +12,6 @@ export enum SuccesLevel {
 }
 
 export type SuccesLevelType = SuccesLevel.CRITICAL | SuccesLevel.FAILURE | SuccesLevel.FUMBLE | SuccesLevel.SPECIAL | SuccesLevel.SUCCESS;
-
 
 export const successLiterals = {
   CRITICAL: 'Éxito crítico',
