@@ -118,7 +118,7 @@
   "yellow": [
     {
       "symbol": "[TRIU]",
-      "success": 0,
+      "success": 1,
       "advantage": 0,
       "critical": 1,
       "forcePoints": 0
@@ -204,7 +204,7 @@
   "red": [
     {
       "symbol": "[DES]",
-      "success": 0,
+      "success": -1,
       "advantage": 0,
       "critical": -1,
       "forcePoints": 0
