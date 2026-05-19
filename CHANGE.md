@@ -1,4 +1,7 @@
 # Dices_bot
+## 3.0.2 Small update
+ - SW Edge of empire , fixxed force dice symbols.
+
 ## V3.0.1 Small update
  - SW Edge of empire , result shown on neutral rolls
 

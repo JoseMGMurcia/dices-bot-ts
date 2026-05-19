@@ -25,12 +25,12 @@ export const getModificator = (text: string): number => {
   const parts = text.split(' ');
   if (parts[NUMBERS.N_1]) {
     const mod = parts[NUMBERS.N_1];
-    return (mod.startsWith('+') || mod.startsWith('-')) && !isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
+    return (mod.startsWith('+') || mod.startsWith('-')) && !Number.isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
 
   } else if (text.indexOf('+') > NUMBERS.N_0 || text.indexOf('-') > NUMBERS.N_0) {
     const mod = text.substring(text.indexOf('+') > NUMBERS.N_0 ? text.indexOf('+') : text.indexOf('-'));
     const nodNumber = mod.substring(NUMBERS.N_1);
-    return !isNaN(Number(nodNumber)) && !isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
+    return !Number.isNaN(Number(nodNumber)) && !Number.isNaN(eval(mod))? eval(mod) : NUMBERS.N_0;
   }
   return NUMBERS.N_0;
 };
