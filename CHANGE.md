@@ -1,4 +1,8 @@
 # Dices_bot
+
+## 3.1.0 Star Wars Edge of Empire
+ - Critical success and critical failure rolls now counts towerds the total of successes and failures, respectively.
+
 ## 3.0.2 Small update
  - SW Edge of empire , fixxed force dice symbols.
 
